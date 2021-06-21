@@ -15,11 +15,11 @@ export const typeDef = gql`
 export const resolvers: IResolvers = {
   Data: {},
   Query: {
-    data(parent, args, context, info) {
+    data: (parent, args, context, info) => {
       const { id, user_id } = args;
       return dataList.find((v) => v.id === id && v.user_id === user_id);
     },
-    dataList() {
+    dataList: () => {
       return dataList;
     },
   },
