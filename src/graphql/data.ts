@@ -1,4 +1,4 @@
-import { gql, IResolvers } from 'apollo-server';
+import { gql, IResolvers } from 'apollo-server-fastify';
 
 export const typeDef = gql`
   type Data @key(fields: "id") {

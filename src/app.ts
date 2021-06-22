@@ -1,6 +1,6 @@
-import Apollo from './server/Apollo';
+import Server from './server/Server';
 
-const server = new Apollo();
+const server = new Server();
 server.start();
 
 export default server;

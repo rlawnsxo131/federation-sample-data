@@ -1,5 +1,5 @@
 import { buildFederatedSchema } from '@apollo/federation';
-import { gql, IResolvers } from 'apollo-server';
+import { gql, IResolvers } from 'apollo-server-fastify';
 import merge from 'lodash.merge';
 import * as data from './data';
 
