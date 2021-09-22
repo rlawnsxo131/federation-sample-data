@@ -24,6 +24,10 @@ export default class Fastify {
     }
   }
 
+  getServer() {
+    return this.server;
+  }
+
   registerApollo(apolloHandler: (app: FastifyInstance) => Promise<void>) {
     this.server.register(apolloHandler);
   }

@@ -1,6 +1,6 @@
 import Apollo from './Apollo';
 import Fastify from './Fastify';
-import envConfig from '../lib/env';
+import initializeEnvironment from '../lib/initializeEnvironment';
 
 export default class Server {
   private server!: Fastify;
@@ -10,12 +10,12 @@ export default class Server {
   }
 
   private setup() {
-    envConfig();
+    initializeEnvironment();
     this.server = new Fastify();
   }
 
   async start() {
-    const apollo = new Apollo();
+    const apollo = new Apollo(this.server.getServer());
     await apollo.start();
     this.server.registerApollo(apollo.createHandler());
     await this.server.start();
